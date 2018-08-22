@@ -67,6 +67,8 @@ let s:selection_bg      = s:Adjust(s:nord2, 0.0)
 
 let s:identifier_fg     = s:nord8
 let s:statement_fg      = s:nord9
+let s:preproc_fg        = s:nord7
+let s:type_fg           = s:nord10
 let s:comment_fg        = s:nord3
 let s:status_line_bg    = s:nord3
 
@@ -94,26 +96,26 @@ call s:Highlight("Identifier", s:nord8, "NONE", "NONE")
 call s:Highlight("Function", s:nord8, "NONE", "NONE")
 
 " Statement Highlighting
-call s:Highlight("Statement", s:nord9, "NONE", "NONE")
-call s:Highlight("Conditional", s:nord9, "NONE", "NONE")
-call s:Highlight("Repeat", s:nord9, "NONE", "NONE")
-call s:Highlight("Label", s:nord9, "NONE", "NONE")
-call s:Highlight("Operator", s:nord9, "NONE", "NONE")
-call s:Highlight("Keyword", s:nord9, "NONE", "NONE")
-call s:Highlight("Exception", s:nord9, "NONE", "NONE")
+call s:Highlight("Statement", s:statement_fg, "NONE", "NONE")
+call s:Highlight("Conditional", s:statement_fg, "NONE", "NONE")
+call s:Highlight("Repeat", s:statement_fg, "NONE", "NONE")
+call s:Highlight("Label", s:statement_fg, "NONE", "NONE")
+call s:Highlight("Operator", s:statement_fg, "NONE", "NONE")
+call s:Highlight("Keyword", s:statement_fg, "NONE", "NONE")
+call s:Highlight("Exception", s:statement_fg, "NONE", "NONE")
 
 " PreProc Highlighting
-call s:Highlight("PreProc", s:nord9, "NONE", "NONE")
-call s:Highlight("Include", s:nord9, "NONE", "NONE")
-call s:Highlight("Define", s:nord9, "NONE", "NONE")
-call s:Highlight("Macro", s:nord9, "NONE", "NONE")
-call s:Highlight("PreCondit", s:nord9, "NONE", "NONE")
+call s:Highlight("PreProc", s:preproc_fg, "NONE", "NONE")
+call s:Highlight("Include", s:preproc_fg, "NONE", "NONE")
+call s:Highlight("Define", s:preproc_fg, "NONE", "NONE")
+call s:Highlight("Macro", s:preproc_fg, "NONE", "NONE")
+call s:Highlight("PreCondit", s:preproc_fg, "NONE", "NONE")
 
 " Type Highlighting
-call s:Highlight("Type", s:nord9, "NONE", "NONE")
-call s:Highlight("StorageClass", s:nord9, "NONE", "NONE")
-call s:Highlight("Structure", s:nord9, "NONE", "NONE")
-call s:Highlight("Typedef", s:nord9, "NONE", "NONE")
+call s:Highlight("Type", s:type_fg, "NONE", "NONE")
+call s:Highlight("StorageClass", s:type_fg, "NONE", "NONE")
+call s:Highlight("Structure", s:type_fg, "NONE", "NONE")
+call s:Highlight("Typedef", s:type_fg, "NONE", "NONE")
 
 " Special Highlighting
 call s:Highlight("Special", s:nord13, "NONE", "NONE")
