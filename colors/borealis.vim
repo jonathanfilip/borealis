@@ -68,7 +68,7 @@ let s:selection_bg      = s:Adjust(s:nord2, 0.0)
 let s:identifier_fg     = s:nord8
 let s:statement_fg      = s:nord9
 let s:preproc_fg        = s:nord7
-let s:type_fg           = s:nord10
+let s:type_fg           = s:nord9
 let s:comment_fg        = s:nord3
 let s:status_line_bg    = s:nord3
 
@@ -136,6 +136,9 @@ call s:Highlight("StatusLineTermNC", s:Adjust(s:border_fg, 0.4), s:border_bg, "N
 call s:Highlight("TabLine", s:border_fg, s:border_bg, "NONE")
 call s:Highlight("TabLineSel", s:normal_fg, s:focused_bg, "NONE")
 call s:Highlight("TabLineFill", s:Adjust(s:border_fg, 0.4), s:border_bg, "NONE")
+
+call s:Highlight("ToolbarLine", s:border_fg, s:border_bg, "NONE")
+call s:Highlight("ToolbarButton", s:normal_fg, s:focused_bg, "NONE")
 
 call s:Highlight("Folded", s:Adjust(s:normal_bg, 3.0), s:Adjust(s:normal_bg, 1.0), "NONE")
 call s:Highlight("FoldColumn", s:Adjust(s:normal_bg, 3.0), s:Adjust(s:normal_bg, 1.0), "NONE")
