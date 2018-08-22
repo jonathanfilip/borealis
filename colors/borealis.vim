@@ -36,46 +36,46 @@ function! s:Adjust(hex_code, factor)
     return 0x10000 * l:red + 0x100 * l:green + l:blue
 endfunction
 
-let s:nord0  = 0x2e3440
-let s:nord1  = 0x3b4252
-let s:nord2  = 0x434c5e
-let s:nord3  = 0x4c566a
-let s:nord4  = 0xd8dee9
-let s:nord5  = 0xe5e9f0
-let s:nord6  = 0xeceff4
-let s:nord7  = 0x8fbcbb
-let s:nord8  = 0x88c0d0
-let s:nord9  = 0x81a1c1
-let s:nord10 = 0x5e81ac
-let s:nord11 = 0xbf616a
-let s:nord12 = 0xd08770
-let s:nord13 = 0xebcb8b
-let s:nord14 = 0xa3be8c
-let s:nord15 = 0xb48ead
+let g:nord0  = 0x2e3440
+let g:nord1  = 0x3b4252
+let g:nord2  = 0x434c5e
+let g:nord3  = 0x4c566a
+let g:nord4  = 0xd8dee9
+let g:nord5  = 0xe5e9f0
+let g:nord6  = 0xeceff4
+let g:nord7  = 0x8fbcbb
+let g:nord8  = 0x88c0d0
+let g:nord9  = 0x81a1c1
+let g:nord10 = 0x5e81ac
+let g:nord11 = 0xbf616a
+let g:nord12 = 0xd08770
+let g:nord13 = 0xebcb8b
+let g:nord14 = 0xa3be8c
+let g:nord15 = 0xb48ead
 
-let s:red               = s:nord11
-let s:orange            = s:nord12
-let s:yellow            = s:nord13
-let s:green             = s:nord14
-let s:purple            = s:nord15
+let s:red               = g:nord11
+let s:orange            = g:nord12
+let s:yellow            = g:nord13
+let s:green             = g:nord14
+let s:purple            = g:nord15
 
-let s:normal_fg         = s:nord4
-let s:normal_bg         = s:nord0
+let s:normal_fg         = g:nord4
+let s:normal_bg         = g:nord0
 
-let s:cursor_bg         = s:nord4
-let s:selection_bg      = s:Adjust(s:nord2, 0.0)
+let s:cursor_bg         = g:nord4
+let s:selection_bg      = s:Adjust(g:nord2, 0.0)
 
-let s:identifier_fg     = s:nord8
-let s:statement_fg      = s:nord9
-let s:preproc_fg        = s:nord7
-let s:type_fg           = s:nord9
-let s:comment_fg        = s:nord3
-let s:status_line_bg    = s:nord3
+let s:identifier_fg     = g:nord8
+let s:statement_fg      = g:nord9
+let s:preproc_fg        = g:nord7
+let s:type_fg           = g:nord9
+let s:comment_fg        = g:nord3
+let s:status_line_bg    = g:nord3
 
-let s:base_ui           = s:nord3
+let s:base_ui           = g:nord3
 let s:border_bg         = s:Adjust(s:normal_bg, 1.5)
 let s:border_fg         = s:normal_bg
-let s:focused_bg        = s:nord10
+let s:focused_bg        = g:nord10
 
 
 call s:Highlight("Normal", s:normal_fg, s:normal_bg, "NONE") 
@@ -84,16 +84,16 @@ call s:Highlight("Normal", s:normal_fg, s:normal_bg, "NONE")
 call s:Highlight("Comment", s:Adjust(s:normal_bg, 1.10), "NONE", "NONE")
 
 " Constant Highlighting
-call s:Highlight("Constant", s:nord14, "NONE", "NONE")
-call s:Highlight("String", s:nord14, "NONE", "NONE")
-call s:Highlight("Character", s:nord14, "NONE", "NONE")
-call s:Highlight("Number", s:nord15, "NONE", "NONE")
-call s:Highlight("Boolean", s:nord9, "NONE", "NONE")
-call s:Highlight("Float", s:nord15, "NONE", "NONE")
+call s:Highlight("Constant", g:nord14, "NONE", "NONE")
+call s:Highlight("String", g:nord14, "NONE", "NONE")
+call s:Highlight("Character", g:nord14, "NONE", "NONE")
+call s:Highlight("Number", g:nord15, "NONE", "NONE")
+call s:Highlight("Boolean", g:nord9, "NONE", "NONE")
+call s:Highlight("Float", g:nord15, "NONE", "NONE")
 
 " Identifier Highlighting
-call s:Highlight("Identifier", s:nord8, "NONE", "NONE")
-call s:Highlight("Function", s:nord8, "NONE", "NONE")
+call s:Highlight("Identifier", g:nord8, "NONE", "NONE")
+call s:Highlight("Function", g:nord8, "NONE", "NONE")
 
 " Statement Highlighting
 call s:Highlight("Statement", s:statement_fg, "NONE", "NONE")
@@ -118,12 +118,12 @@ call s:Highlight("Structure", s:type_fg, "NONE", "NONE")
 call s:Highlight("Typedef", s:type_fg, "NONE", "NONE")
 
 " Special Highlighting
-call s:Highlight("Special", s:nord13, "NONE", "NONE")
-call s:Highlight("SpecialChar", s:nord13, "NONE", "NONE")
-call s:Highlight("Tag", s:nord4, "NONE", "NONE")
-call s:Highlight("Delimiter", s:nord4, "NONE", "NONE")
-call s:Highlight("SpecialComment", s:nord8, "NONE", "NONE")
-call s:Highlight("Debug", s:nord4, "NONE", "NONE")
+call s:Highlight("Special", g:nord13, "NONE", "NONE")
+call s:Highlight("SpecialChar", g:nord13, "NONE", "NONE")
+call s:Highlight("Tag", g:nord4, "NONE", "NONE")
+call s:Highlight("Delimiter", g:nord4, "NONE", "NONE")
+call s:Highlight("SpecialComment", g:nord8, "NONE", "NONE")
+call s:Highlight("Debug", g:nord4, "NONE", "NONE")
 
 
 " Border Highlighting
@@ -187,8 +187,8 @@ call s:Highlight("DiffText", s:Adjust(s:yellow, 0.4), s:Adjust(s:yellow, -0.5), 
 
 " Search Highlighting
 
-call s:Highlight("IncSearch", "bg", s:nord8, "NONE")
-call s:Highlight("MatchParen", s:normal_bg, s:nord7, "NONE")
+call s:Highlight("IncSearch", "bg", g:nord8, "NONE")
+call s:Highlight("MatchParen", s:normal_bg, g:nord7, "NONE")
 call s:Highlight("Search", "bg", s:orange, "NONE")
 
 
@@ -196,14 +196,14 @@ call s:Highlight("Search", "bg", s:orange, "NONE")
 
 call s:Highlight("Conceal", s:comment_fg, "NONE", "NONE")
 call s:Highlight("Ignore", "bg", "NONE", "NONE")
-call s:Highlight("NonText", s:nord2, "NONE", "NONE")
-call s:Highlight("SpecialKey", s:nord3, "NONE", "NONE")
+call s:Highlight("NonText", g:nord2, "NONE", "NONE")
+call s:Highlight("SpecialKey", g:nord3, "NONE", "NONE")
 
-call s:Highlight("Directory", s:nord14, "NONE", "NONE")
+call s:Highlight("Directory", g:nord14, "NONE", "NONE")
 call s:Highlight("ModeMsg", s:statement_fg, "NONE", "NONE")
 call s:Highlight("MoreMsg", s:statement_fg, "NONE", "NONE")
 call s:Highlight("Question", s:normal_fg, "NONE", "NONE")
-call s:Highlight("Title", s:nord8, "NONE", "bold")
+call s:Highlight("Title", g:nord8, "NONE", "bold")
 call s:Highlight("Underlined", "fg", "NONE", "NONE")
 
 
@@ -220,3 +220,13 @@ exec "hi SpellCap gui=undercurl " . s:spell_hi . "=#" . printf("%06x", s:Adjust(
 exec "hi SpellRare gui=undercurl " . s:spell_hi . "=#" . printf("%06x", s:Adjust(s:purple, s:spell_factor))
 exec "hi SpellLocal gui=undercurl " . s:spell_hi . "=#" . printf("%06x", s:Adjust(s:green, s:spell_factor))
 
+
+" Plugin Support
+
+" GitGutter
+if exists("g:gitgutter_enabled")
+    echo "Crap"
+    echo "Crap"
+    echo "Crap"
+    borealis_plugins#GitGutter()
+endif
