@@ -121,10 +121,10 @@ call s:Highlight("Typedef", s:type_fg, "NONE", "NONE")
 " Special Highlighting
 call s:Highlight("Special", s:nord13, "NONE", "NONE")
 call s:Highlight("SpecialChar", s:nord13, "NONE", "NONE")
-call s:Highlight("Tag", s:nord4, "NONE", "NONE")
-call s:Highlight("Delimiter", s:nord4, "NONE", "NONE")
+call s:Highlight("Tag", s:nord13, "NONE", "NONE")
+call s:Highlight("Delimiter", s:nord13, "NONE", "NONE")
 call s:Highlight("SpecialComment", s:nord8, "NONE", "NONE")
-call s:Highlight("Debug", s:nord4, "NONE", "NONE")
+call s:Highlight("Debug", s:nord13, "NONE", "NONE")
 
 
 " Border Highlighting
