@@ -72,7 +72,7 @@ let s:type_fg           = s:nord9
 let s:comment_fg        = s:Adjust(s:normal_bg, 1.00)
 " let s:comment_fg        = s:nord3
 
-let s:border_bg         = s:Adjust(s:normal_bg, 1.0)
+let s:border_bg         = s:Adjust(s:normal_bg, 1.2)
 let s:border_fg         = s:normal_fg
 let s:faded_border_bg   = s:Adjust(s:normal_bg, 0.5)
 let s:border_faded_fg   = s:Adjust(s:normal_bg, 3.0)
@@ -141,14 +141,14 @@ call s:Highlight("TabLineFill", s:border_faded_fg, s:border_bg, "NONE")
 call s:Highlight("ToolbarLine", s:border_fg, s:border_bg, "NONE")
 call s:Highlight("ToolbarButton", s:normal_fg, s:focused_bg, "NONE")
 
-call s:Highlight("Folded", s:Adjust(s:normal_bg, 3.0), s:Adjust(s:normal_bg, 1.0), "NONE")
-call s:Highlight("FoldColumn", s:Adjust(s:normal_bg, 3.0), s:Adjust(s:normal_bg, 1.0), "NONE")
+call s:Highlight("Folded", s:Adjust(s:normal_bg, 3.0), s:Adjust(s:normal_bg, 0.7), "NONE")
+call s:Highlight("FoldColumn", s:Adjust(s:normal_bg, 3.0), s:Adjust(s:normal_bg, 0.7), "NONE")
 
-call s:Highlight("LineNr", s:Adjust(s:normal_bg, 1.0), s:faded_border_bg, "NONE")
+call s:Highlight("LineNr", s:Adjust(s:normal_bg, 1.5), s:faded_border_bg, "NONE")
 call s:Highlight("CursorLineNr", s:Adjust(s:normal_bg, 3.0), s:faded_border_bg, "NONE")
 
 call s:Highlight("ColorColumn", "NONE", s:Adjust(s:normal_bg, 0.2), "NONE")
-call s:Highlight("SignColumn", s:Adjust(s:normal_bg, 1.0), s:faded_border_bg, "NONE")
+call s:Highlight("SignColumn", s:Adjust(s:normal_bg, 1.5), s:faded_border_bg, "NONE")
 
 
 " Cursor Highlighting
