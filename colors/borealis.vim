@@ -75,7 +75,7 @@ let s:comment_fg        = s:Adjust(s:normal_bg, 1.00)
 let s:border_bg         = s:Adjust(s:normal_bg, 1.2)
 let s:border_fg         = s:normal_fg
 let s:faded_border_bg   = s:Adjust(s:normal_bg, 0.5)
-let s:border_faded_fg   = s:Adjust(s:normal_bg, 3.0)
+let s:border_faded_fg   = s:Adjust(s:normal_bg, 2.5)
 let s:focused_bg        = s:nord10
 
 
