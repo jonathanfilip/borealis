@@ -204,7 +204,7 @@ call s:Highlight("Directory", s:nord14, "NONE", "NONE")
 call s:Highlight("ModeMsg", s:statement_fg, "NONE", "NONE")
 call s:Highlight("MoreMsg", s:statement_fg, "NONE", "NONE")
 call s:Highlight("Question", s:normal_fg, "NONE", "NONE")
-call s:Highlight("Title", s:nord8, "NONE", "bold")
+call s:Highlight("Title", s:identifier_fg, "NONE", "bold")
 call s:Highlight("Underlined", "fg", "NONE", "NONE")
 
 
@@ -213,8 +213,8 @@ call s:Highlight("Underlined", "fg", "NONE", "NONE")
 let s:spell_hi = "guibg"
 let s:spell_factor = -0.3
 if has("gui_running")
-    s:spell_hi = "guisp"
-    s:spell_factor = 0.0
+    let s:spell_hi = "guisp"
+    let s:spell_factor = 0.0
 endif
 exec "hi SpellBad gui=undercurl " . s:spell_hi . "=#" . printf("%06x", s:Adjust(s:red, s:spell_factor))
 exec "hi SpellCap gui=undercurl " . s:spell_hi . "=#" . printf("%06x", s:Adjust(s:yellow, s:spell_factor))

@@ -71,17 +71,18 @@ let s:normal_fg         = 0x404040
 let s:normal_bg         = 0xececec
 
 let s:cursor_bg         = s:nord0
-let s:selection_bg      = s:Adjust(s:nord2, 0.0)
+let s:selection_bg      = s:Adjust(s:nord8, 0.0)
 
-let s:constant_fg       = s:AdjustRGB(s:nord14, -0.5, -0.2, -0.5)
+let s:base_blue         = s:AdjustRGB(s:nord9, -0.7, -0.7, 0.0)
+let s:constant_fg       = s:AdjustRGB(s:nord14, -1.0, -0.3, -1.0)
 let s:number_fg         = s:AdjustRGB(s:nord15, 0.0, -0.5, 0.0)
-let s:bool_fg           = s:AdjustRGB(s:nord9, -0.4, -0.4, 0.0)
-let s:identifier_fg     = s:Adjust(s:nord8, -0.4)
-let s:statement_fg      = s:AdjustRGB(s:nord9, -0.4, -0.4, 0.0)
-let s:preproc_fg        = s:AdjustRGB(s:nord7, -0.4, 0.0, -0.0)
-let s:type_fg           = s:AdjustRGB(s:nord9, -0.4, -0.4, 0.0)
-let s:special_fg        = s:AdjustRGB(s:nord13, 0.0, -0.2, -0.4)
-let s:spec_comment_fg   = s:AdjustRGB(s:nord8, -0.4, -0.4, 0.0)
+let s:bool_fg           = s:base_blue
+let s:identifier_fg     = s:AdjustRGB(s:nord8, -1.0, -0.3, 0.0)
+let s:statement_fg      = s:base_blue
+let s:preproc_fg        = s:AdjustRGB(s:nord7, -1.0, -0.1, -0.1)
+let s:type_fg           = s:base_blue
+let s:special_fg        = s:AdjustRGB(s:nord13, -0.2, -0.4, -0.8)
+let s:spec_comment_fg   = s:identifier_fg
 let s:comment_fg        = s:Adjust(s:normal_bg, -0.4)
 
 let s:border_bg         = s:nord10
@@ -153,8 +154,8 @@ call s:Highlight("TabLineFill", s:border_faded_fg, s:border_bg, "NONE")
 call s:Highlight("ToolbarLine", s:border_fg, s:border_bg, "NONE")
 call s:Highlight("ToolbarButton", s:normal_fg, s:focused_bg, "NONE")
 
-call s:Highlight("Folded", s:Adjust(s:normal_bg, -0.5), s:Adjust(s:normal_bg, -0.4), "NONE")
-call s:Highlight("FoldColumn", s:Adjust(s:normal_bg, -0.5), s:Adjust(s:normal_bg, 0.7), "NONE")
+call s:Highlight("Folded", s:Adjust(s:normal_bg, -0.2), s:Adjust(s:normal_bg, -0.2), "NONE")
+call s:Highlight("FoldColumn", s:Adjust(s:normal_bg, -0.2), s:Adjust(s:normal_bg, -0.2), "NONE")
 
 call s:Highlight("LineNr", s:Adjust(s:normal_bg, -0.3), s:faded_border_bg, "NONE")
 call s:Highlight("CursorLineNr", s:Adjust(s:normal_bg, -0.5), s:faded_border_bg, "NONE")
@@ -192,10 +193,10 @@ call s:Highlight("WarningMsg", s:yellow, "NONE", "NONE")
 
 " Diff Highlighting
 
-call s:Highlight("DiffAdd", "fg", s:Adjust(s:green, 0.8), "NONE")
-call s:Highlight("DiffDelete", "fg", s:Adjust(s:red, 1.0), "NONE")
-call s:Highlight("DiffChange", "fg", s:Adjust(s:yellow, 1.0), "NONE")
-call s:Highlight("DiffText", s:Adjust(s:yellow, -0.2), s:Adjust(s:yellow, 1.0), "NONE")
+call s:Highlight("DiffAdd", "fg", s:Adjust(s:green, 0.0), "NONE")
+call s:Highlight("DiffDelete", "fg", s:Adjust(s:red, 0.0), "NONE")
+call s:Highlight("DiffChange", "fg", s:Adjust(s:yellow, 0.0), "NONE")
+call s:Highlight("DiffText", s:AdjustRGB(s:yellow, -0.0, -0.4, -1.0), s:Adjust(s:yellow, 0.0), "NONE")
 
 
 " Search Highlighting
@@ -216,7 +217,7 @@ call s:Highlight("Directory", s:nord14, "NONE", "NONE")
 call s:Highlight("ModeMsg", s:statement_fg, "NONE", "NONE")
 call s:Highlight("MoreMsg", s:statement_fg, "NONE", "NONE")
 call s:Highlight("Question", s:normal_fg, "NONE", "NONE")
-call s:Highlight("Title", s:nord8, "NONE", "bold")
+call s:Highlight("Title", s:identifier_fg, "NONE", "bold")
 call s:Highlight("Underlined", "fg", "NONE", "NONE")
 
 
@@ -225,8 +226,8 @@ call s:Highlight("Underlined", "fg", "NONE", "NONE")
 let s:spell_hi = "guibg"
 let s:spell_factor = -0.3
 if has("gui_running")
-    s:spell_hi = "guisp"
-    s:spell_factor = 0.0
+    let s:spell_hi = "guisp"
+    let s:spell_factor = 0.0
 endif
 exec "hi SpellBad gui=undercurl " . s:spell_hi . "=#" . printf("%06x", s:Adjust(s:red, s:spell_factor))
 exec "hi SpellCap gui=undercurl " . s:spell_hi . "=#" . printf("%06x", s:Adjust(s:yellow, s:spell_factor))
